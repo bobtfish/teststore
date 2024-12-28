@@ -1,0 +1,12 @@
+diff --git a/node_modules/@adyen/adyen-web/package.json b/node_modules/@adyen/adyen-web/package.json
+index 72517e2..98ba9d8 100644
+--- a/node_modules/@adyen/adyen-web/package.json
++++ b/node_modules/@adyen/adyen-web/package.json
+@@ -139,5 +139,6 @@
+         "*.{js,jsx,ts,tsx}": "eslint",
+         "*.{scss,css}": "stylelint",
+         "*.{js,jsx,ts,tsx,html,md}": "prettier --write"
+-    }
++    },
++    "type": "module"
+ }

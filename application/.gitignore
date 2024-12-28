@@ -1,9 +1,0 @@
-node_modules
-storefrontconfig.json
-/.cache
-/build
-/public/build
-.env
-/test-results/
-/playwright-report/
-/playwright/.cache/
