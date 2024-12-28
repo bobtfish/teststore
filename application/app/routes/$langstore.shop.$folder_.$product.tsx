@@ -13,7 +13,7 @@ import { buildMetas } from '~/use-cases/MicrodataBuilder';
 import { getContext } from '~/use-cases/http/utils';
 import Product from '~/ui/pages/Product';
 import dataFetcherForShapePage from '~/use-cases/dataFetcherForShapePage.server';
-import videoStyles from '@crystallize/reactjs-components/assets/video/styles.css';
+import videoStyles from '@crystallize/reactjs-components/assets/video/styles.css?url';
 import { authenticatedUser } from '~/core/authentication.server';
 import { marketIdentifiersForUser } from '~/use-cases/marketIdentifiersForUser';
 import type { Product as ProductType } from '~/use-cases/contracts/Product';

@@ -8,7 +8,7 @@ import {
 } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import splideStyles from '@splidejs/splide/dist/css/themes/splide-default.min.css';
+import splideStyles from '@splidejs/splide/dist/css/themes/splide-default.min.css?url';
 import { HttpCacheHeaderTaggerFromLoader, StoreFrontAwaretHttpCacheHeaderTagger } from '~/use-cases/http/cache';
 import { getStoreFront } from '~/use-cases/storefront.server';
 import { CrystallizeAPI } from '~/use-cases/crystallize/read';

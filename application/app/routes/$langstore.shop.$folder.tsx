@@ -8,12 +8,12 @@ import {
 } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 import { HttpCacheHeaderTaggerFromLoader, StoreFrontAwaretHttpCacheHeaderTagger } from '~/use-cases/http/cache';
-import sliderStyles from 'rc-slider/assets/index.css';
+import sliderStyles from 'rc-slider/assets/index.css?url';
 import { getStoreFront } from '~/use-cases/storefront.server';
 import { buildMetas } from '~/use-cases/MicrodataBuilder';
 import { getContext } from '~/use-cases/http/utils';
-import splideStyles from '@splidejs/splide/dist/css/themes/splide-default.min.css';
-import videoStyles from '@crystallize/reactjs-components/assets/video/styles.css';
+import splideStyles from '@splidejs/splide/dist/css/themes/splide-default.min.css?url';
+import videoStyles from '@crystallize/reactjs-components/assets/video/styles.css?url';
 import Category from '~/ui/pages/Category';
 import dataFetcherForShapePage from '~/use-cases/dataFetcherForShapePage.server';
 import { authenticatedUser } from '~/core/authentication.server';
