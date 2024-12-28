@@ -40,7 +40,7 @@ export const Product: React.FC<{ item: ProductSlim }> = ({ item }) => {
             <div className="focal-point-container bg-[#fff] rounded-md overflow-hidden h-[300px] aspect-[3/4] relative">
                 {item.variant.images[0] ? (
                     <Image
-                        {...item.variant.images[0]}
+		        {...(delete item.variant.images[0].focalPoint || true && item.variant.images[0])}
                         sizes="300px"
                         loading="lazy"
                         fallbackAlt={item.name}
