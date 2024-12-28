@@ -4,7 +4,6 @@ storefrontconfig.json
 /build
 /public/build
 .env
-/src/styles/tailwind.css
 /test-results/
 /playwright-report/
 /playwright/.cache/
