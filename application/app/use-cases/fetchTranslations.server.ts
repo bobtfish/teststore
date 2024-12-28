@@ -24,7 +24,7 @@ export default async (storage: BackendStorage, memoryStorage: BackendStorage, la
     if (!memoryCachedFlat) {
         const cachedFlat = await storage.get(key);
         if (!cachedFlat) {
-            const raw = await fs.readFile(`./src/translations/${language}.json`, { encoding: 'utf8' });
+            const raw = await fs.readFile(`./app/translations/${language}.json`, { encoding: 'utf8' });
             const flat = toFlatPropertyMap(JSON.parse(raw));
             memoryStorage.set(key, JSON.stringify(flat), 3600 * 4);
             storage.set(key, JSON.stringify(flat), 3600 * 4);

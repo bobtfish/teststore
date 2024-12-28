@@ -1,6 +1,5 @@
 import {
     Links,
-    LiveReload,
     Meta,
     Outlet,
     Scripts,
@@ -30,7 +29,7 @@ import {
 import { storage, memoryStorage } from '~/use-cases/services.server';
 import fetchTranslations from '~/use-cases/fetchTranslations.server';
 import { ErrorComponent } from '~/ui/components/error';
-import tailwindTheme from '~/styles/index.css';
+import tailwindTheme from '~/styles/index.css?url';
 
 export const meta: MetaFunction = () => {
     return [
@@ -152,7 +151,6 @@ const Document: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                         {children}
                         <ScrollRestoration />
                         <Scripts />
-                        <LiveReload />
                     </body>
                 </html>
             </AppContextProvider>
