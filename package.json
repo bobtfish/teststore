@@ -5,10 +5,8 @@
     "license": "MIT",
     "sideEffects": false,
     "scripts": {
-        "build": "npm run build:css && remix vite:build",
-        "build:css": "tailwindcss -c tailwind.config.js -m -i ./src/styles/index.css -o ./src/styles/tailwind.css",
+        "build": "npx remix vite:build",
         "dev": "remix vite:dev",
-        "dev:css": "tailwindcss -c tailwind.config.js -w -i ./src/styles/index.css -o ./src/styles/tailwind.css",
         "start": "remix-serve ./build/server/index.js",
         "test": "playwright test",
         "playwright:install": "playwright install",

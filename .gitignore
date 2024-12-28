@@ -1,2 +1,4 @@
 .vercel
 public/build/
+build/
+node_modules/
