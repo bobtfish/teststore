@@ -1,4 +1,4 @@
-# Crystallize - Remix Run - Boilerplate
+# Crystallize - Remix Run
 
 # Installation
 
