@@ -10,7 +10,11 @@ export default defineConfig({
   plugins: [
     remix({
       presets: [vercelPreset()],
-      ignoredRouteFiles: ["postcss.config.js", "**/*.css"],
+      ignoredRouteFiles: [
+	"tailwind.config.mjs",
+	"postcss.config.js",
+	"**/*.css"
+      ],
     }),
     tsconfigPaths()
   ],
