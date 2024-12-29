@@ -1,7 +1,7 @@
-import { default as fsWithCallbacks } from 'fs';
-const fs = fsWithCallbacks.promises;
-import { BackendStorage } from './contracts/BackendStorage';
-
+const translationStrings = import.meta.glob('./app/translations/*.json', {
+    query: '?raw',
+    import: 'default',
+});
 const toFlatPropertyMap = (obj: any, keySeparator = '.') => {
     const flattenRecursive = (obj: any, parentProperty?: string, propertyMap: Record<string, unknown> = {}) => {
         for (const [key, value] of Object.entries(obj)) {
@@ -17,21 +17,6 @@ const toFlatPropertyMap = (obj: any, keySeparator = '.') => {
     return flattenRecursive(obj);
 };
 
-// we saved that in the memory first, then redis if it's available then fs
-export default async (storage: BackendStorage, memoryStorage: BackendStorage, language: string) => {
-    const key = `translations-${language}`;
-    const memoryCachedFlat = await memoryStorage.get(key);
-    if (!memoryCachedFlat) {
-        const cachedFlat = await storage.get(key);
-        if (!cachedFlat) {
-            const raw = await fs.readFile(`./app/translations/${language}.json`, { encoding: 'utf8' });
-            const flat = toFlatPropertyMap(JSON.parse(raw));
-            memoryStorage.set(key, JSON.stringify(flat), 3600 * 4);
-            storage.set(key, JSON.stringify(flat), 3600 * 4);
-            return flat;
-        }
-        memoryStorage.set(key, cachedFlat, 3600 * 4);
-        return JSON.parse(cachedFlat);
-    }
-    return JSON.parse(memoryCachedFlat);
+export default async (language: string) => {
+    return toFlatPropertyMap(await translationStrings[language]);
 };
