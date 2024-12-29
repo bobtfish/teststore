@@ -8,7 +8,7 @@ export default defineConfig({
     remix({
       presets: [vercelPreset()],
       ignoredRouteFiles: [
-          "tailwind.config.mjs",
+        "tailwind.config.mjs",
         "postcss.config.js",
         "**/*.css"
       ],

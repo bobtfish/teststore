@@ -1,4 +1,4 @@
-const translationStrings = import.meta.glob('./app/translations/*.json', {
+const translationStrings = import.meta.glob('/app/translations/*.json', {
     query: '?raw',
     import: 'default',
 });
@@ -18,5 +18,5 @@ const toFlatPropertyMap = (obj: any, keySeparator = '.') => {
 };
 
 export default async (language: string) => {
-    return toFlatPropertyMap(await translationStrings[language]);
+    return toFlatPropertyMap(await translationStrings[`/app/translations/${language}.json`]);
 };

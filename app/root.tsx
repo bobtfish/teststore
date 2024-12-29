@@ -63,7 +63,7 @@ export let loader: LoaderFunction = async ({ request }: LoaderFunctionArgs) => {
     const [navigation, tenantConfig, translations, footer] = await Promise.all([
         api.fetchNavigation('/'),
         api.fetchTenantConfig(secret.config.tenantIdentifier),
-        fetchTranslations(storage, memoryStorage, requestContext.language),
+        fetchTranslations(requestContext.language),
         api.fetchFooter('/footer'),
     ]);
 
